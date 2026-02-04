@@ -1,0 +1,54 @@
+{
+  "linuxWallpaperEngine": {
+    "enabled": true,
+    "monitorScenes": {
+      "eDP-1": "2190054449"
+    },
+    "sceneSettings": {
+      "2190054449": {
+        "fps": 27
+      }
+    },
+    "generateStaticWallpaper": true
+  },
+  "dockerManager": {
+    "enabled": true,
+    "dockerBinary": "podman",
+    "terminalApp": "kitty --detach",
+    "groupByCompose": false
+  },
+  "niriWindows": {
+    "enabled": true,
+    "noTrigger": false,
+    "trigger": "!"
+  },
+  "dmsLenovoBatterySettings": {
+    "enabled": true
+  },
+  "dmsBatteryManager": {
+    "enabled": true
+  },
+  "dmsBatteryManagerSettings": {
+    "refreshInterval": 1
+  },
+  "thinkpadBatteryThreshold": {
+    "enabled": true
+  },
+  "batteryThreshold": {
+    "enabled": true
+  },
+  "dankBatteryAlerts": {
+    "enabled": true
+  },
+  "dankKDEConnect": {
+    "enabled": true
+  },
+  "customRunningApps": {
+    "enabled": true,
+    "itemPercentage": 70,
+    "iconPercentage": 80,
+    "spaceBetweenItems": 2,
+    "resizeOnHover": false,
+    "resizePercentage": 133
+  }
+}
