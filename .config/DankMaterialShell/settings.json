@@ -8,7 +8,7 @@
   "matugenTargetMonitor": "",
   "popupTransparency": 1,
   "dockTransparency": 0.9,
-  "widgetBackgroundColor": "sch",
+  "widgetBackgroundColor": "s",
   "widgetColorMode": "default",
   "cornerRadius": 12,
   "niriLayoutGapsOverride": -1,
@@ -28,7 +28,7 @@
   "customAnimationDuration": 500,
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
-  "blurWallpaperOnOverview": false,
+  "blurWallpaperOnOverview": true,
   "showLauncherButton": true,
   "showWorkspaceSwitcher": true,
   "showFocusedWindow": true,
@@ -118,6 +118,13 @@
       "id": "idleInhibitor",
       "enabled": true,
       "width": 50
+    },
+    {
+      "id": "diskUsage",
+      "enabled": true,
+      "width": 100,
+      "instanceId": "mlh3pmcq5gmtjghvc87",
+      "mountPath": "/"
     }
   ],
   "showWorkspaceIndex": false,
@@ -132,7 +139,7 @@
   "reverseScrolling": false,
   "dwlShowAllTags": false,
   "workspaceColorMode": "default",
-  "workspaceUnfocusedColorMode": "default",
+  "workspaceUnfocusedColorMode": "sc",
   "workspaceUrgentColorMode": "default",
   "workspaceFocusedBorderEnabled": false,
   "workspaceFocusedBorderColor": "primary",
@@ -176,7 +183,7 @@
     }
   ],
   "centeringMode": "geometric",
-  "clockDateFormat": "",
+  "clockDateFormat": "d/M",
   "lockDateFormat": "",
   "mediaSize": 1,
   "appLauncherViewMode": "grid",
@@ -277,8 +284,8 @@
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": true,
   "showDock": false,
-  "dockAutoHide": false,
-  "dockGroupByApp": false,
+  "dockAutoHide": true,
+  "dockGroupByApp": true,
   "dockOpenOnOverview": false,
   "dockPosition": 1,
   "dockSpacing": 8,
@@ -308,9 +315,9 @@
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 5000,
   "notificationTimeoutCritical": 0,
-  "notificationCompactMode": false,
+  "notificationCompactMode": true,
   "notificationPopupPosition": 0,
-  "notificationHistoryEnabled": true,
+  "notificationHistoryEnabled": false,
   "notificationHistoryMaxCount": 50,
   "notificationHistoryMaxAgeDays": 7,
   "notificationHistorySaveLow": true,
@@ -383,7 +390,7 @@
         {
           "id": "focusedWindow",
           "enabled": true,
-          "focusedWindowCompactMode": true
+          "focusedWindowCompactMode": false
         },
         {
           "id": "music",
@@ -490,7 +497,7 @@
       "fontScale": 1.4,
       "autoHide": false,
       "autoHideDelay": 250,
-      "openOnOverview": false,
+      "openOnOverview": true,
       "visible": true,
       "popupGapsAuto": true,
       "popupGapsManual": 4,
@@ -567,7 +574,8 @@
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {
     "eDP-1": {
-      "enabled": false
+      "enabled": true,
+      "size": 10
     }
   },
   "desktopWidgetInstances": [
@@ -575,28 +583,30 @@
       "id": "dw_1770080134773_pfg2ulibq",
       "widgetType": "desktopClock",
       "name": "Desktop Clock",
-      "enabled": true,
+      "enabled": false,
       "config": {
-        "style": "digital",
+        "style": "stacked",
         "transparency": 1,
-        "colorMode": "custom",
+        "colorMode": "primary",
         "customColor": "#a8b0d5",
         "showDate": true,
-        "showAnalogNumbers": false,
+        "showAnalogNumbers": true,
         "showAnalogSeconds": true,
         "displayPreferences": [
           "all"
         ],
         "showOnOverlay": false,
-        "clickThrough": true,
-        "syncPositionAcrossScreens": true
+        "clickThrough": false,
+        "syncPositionAcrossScreens": true,
+        "showOnOverview": false,
+        "showOnOverviewOnly": false
       },
       "positions": {
         "_synced": {
-          "width": 280,
-          "height": 320,
-          "x": 0.34436238606770836,
-          "y": 0.2592158564814815
+          "width": 240,
+          "height": 390,
+          "x": 0.010416666666666666,
+          "y": 0.046296296296296294
         }
       },
       "group": "dwg_1770083821741_4ghwrfiyb"
@@ -615,7 +625,9 @@
         "drawBorder": false,
         "clickThrough": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "drawOutlines": false,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -625,8 +637,8 @@
           "y": 600
         },
         "_synced": {
-          "x": 0.3541666666666667,
-          "y": 0.5555555555555556,
+          "x": 0.23958333333333334,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -646,7 +658,8 @@
         "shortcutApp": "io.gitlab.librewolf-community",
         "drawBorder": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -656,8 +669,8 @@
           "y": 600
         },
         "_synced": {
-          "x": 0.3958333333333333,
-          "y": 0.5555555555555556,
+          "x": 0.28125,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -677,7 +690,8 @@
         "shortcutApp": "org.mozilla.Thunderbird",
         "drawBorder": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -687,8 +701,8 @@
           "y": 600
         },
         "_synced": {
-          "x": 0.4375,
-          "y": 0.5555555555555556,
+          "x": 0.3229166666666667,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -707,14 +721,15 @@
         "followTheme": false,
         "shortcutApp": "com.stremio.Stremio",
         "drawBorder": false,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
           "width": 100,
           "height": 100,
-          "x": 920,
-          "y": 600
+          "x": 700,
+          "y": 980
         }
       },
       "group": "dwg_1770082411705_693rzkogo"
@@ -732,7 +747,8 @@
         "shortcutApp": "popcorn-time",
         "drawBorder": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -742,8 +758,8 @@
           "y": 600
         },
         "_synced": {
-          "x": 0.5208333333333334,
-          "y": 0.5555555555555556,
+          "x": 0.40625,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -763,7 +779,8 @@
         "shortcutApp": "org.libreoffice.LibreOffice",
         "drawBorder": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -773,8 +790,8 @@
           "y": 600
         },
         "_synced": {
-          "x": 0.5625,
-          "y": 0.5555555555555556,
+          "x": 0.6979166666666666,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -794,7 +811,8 @@
         "shortcutApp": "code",
         "drawBorder": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -804,8 +822,8 @@
           "y": 680
         },
         "_synced": {
-          "x": 0.3541666666666667,
-          "y": 0.6296296296296297,
+          "x": 0.4479166666666667,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -825,7 +843,8 @@
         "shortcutApp": "dev.vencord.Vesktop",
         "drawBorder": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -835,8 +854,8 @@
           "y": 680
         },
         "_synced": {
-          "x": 0.5208333333333334,
-          "y": 0.6296296296296297,
+          "x": 0.6145833333333334,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -856,7 +875,8 @@
         "shortcutApp": "steam",
         "drawBorder": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -866,8 +886,8 @@
           "y": 680
         },
         "_synced": {
-          "x": 0.4791666666666667,
-          "y": 0.6296296296296297,
+          "x": 0.5729166666666666,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -887,7 +907,8 @@
         "shortcutApp": "kitty",
         "drawBorder": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -897,8 +918,8 @@
           "y": 680
         },
         "_synced": {
-          "x": 0.5625,
-          "y": 0.6296296296296297,
+          "x": 0.65625,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -918,7 +939,8 @@
         "shortcutApp": "io.beekeeperstudio.Studio",
         "drawBorder": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -928,8 +950,8 @@
           "y": 680
         },
         "_synced": {
-          "x": 0.4375,
-          "y": 0.6296296296296297,
+          "x": 0.53125,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -949,7 +971,8 @@
         "shortcutApp": "com.getpostman.Postman",
         "drawBorder": false,
         "syncPositionAcrossScreens": true,
-        "backgroundOpacity": 100
+        "backgroundOpacity": 100,
+        "showOnOverview": true
       },
       "positions": {
         "eDP-1": {
@@ -959,8 +982,8 @@
           "y": 680
         },
         "_synced": {
-          "x": 0.3958333333333333,
-          "y": 0.6296296296296297,
+          "x": 0.4895833333333333,
+          "y": 0.9074074074074074,
           "width": 100,
           "height": 100
         }
@@ -971,14 +994,14 @@
       "id": "dw_1770083965106_qzx16loxg",
       "widgetType": "dankDesktopWeather",
       "name": "Dank Desktop Weather",
-      "enabled": true,
+      "enabled": false,
       "config": {
         "displayPreferences": [
           "all"
         ],
         "showPressure": false,
         "backgroundOpacity": 100,
-        "clickThrough": true,
+        "clickThrough": false,
         "syncPositionAcrossScreens": true,
         "customColor": {
           "r": 0.6588388085365295,
@@ -993,9 +1016,12 @@
           "hslLightness": 0.7470664381980896,
           "valid": true
         },
-        "colorMode": "primary",
+        "colorMode": "secondary",
         "viewMode": "forecast",
-        "showHourlyForecast": false
+        "showHourlyForecast": false,
+        "showOnOverlay": false,
+        "showPrecipitation": true,
+        "forecastDays": 7
       },
       "positions": {
         "eDP-1": {
@@ -1005,10 +1031,10 @@
           "y": 360
         },
         "_synced": {
-          "x": 0.4791666666666667,
-          "y": 0.25925925925925924,
+          "x": 0.125,
+          "y": 0.046296296296296294,
           "width": 280,
-          "height": 320
+          "height": 390
         }
       },
       "group": "dwg_1770083821741_4ghwrfiyb"
@@ -1026,6 +1052,10 @@
       "collapsed": false
     }
   ],
-  "builtInPluginSettings": {},
+  "builtInPluginSettings": {
+    "dms_settings_search": {
+      "trigger": "?"
+    }
+  },
   "configVersion": 5
 }

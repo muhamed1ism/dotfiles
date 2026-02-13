@@ -1,0 +1,141 @@
+binds {
+    Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
+    Super+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Super+Comma hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
+    Super+M hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
+    Super+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
+    Super+Shift+C hotkey-overlay-title="Color picker to clipboard" { spawn "dms" "color" "pick" "--autocopy"; }
+    Super+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
+    Super+Space hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Super+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+    Super+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
+    Super+grave { spawn "dms" "ipc" "call" "spotlight" "openQuery" "!"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "3"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "micmute"; }
+    XF86AudioMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
+    XF86AudioNext allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "next"; }
+    XF86AudioPause allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
+    XF86AudioPlay allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
+    XF86AudioPrev allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "3"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
+    Super+1 { focus-workspace 1; }
+    Super+2 { focus-workspace 2; }
+    Super+3 { focus-workspace 3; }
+    Super+4 { focus-workspace 4; }
+    Super+5 { focus-workspace 5; }
+    Super+6 { focus-workspace 6; }
+    Super+7 { focus-workspace 7; }
+    Super+8 { focus-workspace 8; }
+    Super+9 { focus-workspace 9; }
+    Super+Ctrl+Down { move-column-to-workspace-down; }
+    Super+Ctrl+Up { move-column-to-workspace-up; }
+    Super+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Super+Ctrl+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
+    Super+Page_Down { focus-workspace-down; }
+    Super+Page_Up { focus-workspace-up; }
+    Super+S { focus-workspace-down; }
+    Super+Shift+1 { move-column-to-workspace 1; }
+    Super+Shift+2 { move-column-to-workspace 2; }
+    Super+Shift+3 { move-column-to-workspace 3; }
+    Super+Shift+4 { move-column-to-workspace 4; }
+    Super+Shift+5 { move-column-to-workspace 5; }
+    Super+Shift+6 { move-column-to-workspace 6; }
+    Super+Shift+7 { move-column-to-workspace 7; }
+    Super+Shift+8 { move-column-to-workspace 8; }
+    Super+Shift+9 { move-column-to-workspace 9; }
+    Super+Shift+I { move-workspace-up; }
+    Super+Shift+Page_Down { move-workspace-down; }
+    Super+Shift+Page_Up { move-workspace-up; }
+    Super+Shift+S { move-column-to-workspace-down; }
+    Super+Shift+U { move-workspace-down; }
+    Super+Shift+W { move-column-to-workspace-up; }
+    Super+W { focus-workspace-up; }
+    Super+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Super+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+    Alt+Print { screenshot-window; }
+    Alt+XF86Launch1 { screenshot-window; }
+    Super+A hotkey-overlay-title="Focus Left" { focus-column-left; }
+    Super+BracketLeft { consume-or-expel-window-left; }
+    Super+BracketRight { consume-or-expel-window-right; }
+    Super+C { center-column; }
+    Super+Ctrl+C { center-visible-columns; }
+    Super+Ctrl+End { move-column-to-last; }
+    Super+Ctrl+F { fullscreen-window; }
+    Super+Ctrl+H { consume-or-expel-window-left; }
+    Super+Ctrl+Home { move-column-to-first; }
+    Super+Ctrl+J { focus-monitor-down; }
+    Super+Ctrl+K { focus-monitor-up; }
+    Super+Ctrl+L { consume-or-expel-window-right; }
+    Super+Ctrl+Left { focus-monitor-left; }
+    Super+Ctrl+R { reset-window-height; }
+    Super+Ctrl+Right { focus-monitor-right; }
+    Super+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Super+Ctrl+Shift+WheelScrollUp { move-column-left; }
+    Super+Ctrl+WheelScrollLeft { move-column-left; }
+    Super+Ctrl+WheelScrollRight { move-column-right; }
+    Super+D hotkey-overlay-title="Focus Right" { focus-column-right; }
+    Super+Down { focus-window-down; }
+    Super+End { focus-column-last; }
+    Super+H { focus-column-left; }
+    Super+Home { focus-column-first; }
+    Super+J { focus-window-down; }
+    Super+K { focus-window-up; }
+    Super+L { focus-column-right; }
+    Super+Left { focus-column-left; }
+    Super+Minus { set-column-width "-5%"; }
+    Super+Period { expel-window-from-column; }
+    Super+Plus { set-column-width "+5%"; }
+    Super+Q repeat=false { close-window; }
+    Super+R { switch-preset-column-width; }
+    Super+Right { focus-column-right; }
+    Super+Shift+A hotkey-overlay-title="Move Left" { move-column-left; }
+    Super+Shift+Ctrl+Down { move-column-to-monitor-down; }
+    Super+Shift+Ctrl+H { move-column-to-monitor-left; }
+    Super+Shift+Ctrl+J { move-column-to-monitor-down; }
+    Super+Shift+Ctrl+K { move-column-to-monitor-up; }
+    Super+Shift+Ctrl+L { move-column-to-monitor-right; }
+    Super+Shift+Ctrl+Left { move-column-to-monitor-left; }
+    Super+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    Super+Shift+Ctrl+Up { move-column-to-monitor-up; }
+    Super+Shift+D hotkey-overlay-title="Move Right" { move-column-right; }
+    Super+Shift+Down { move-window-down; }
+    Super+Shift+E { expand-column-to-available-width; }
+    Super+Shift+F hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn "niri-sidebar" "toggle-window"; }
+    Super+Shift+H { move-column-left; }
+    Super+Shift+J { move-window-down; }
+    Super+Shift+K { move-window-up; }
+    Super+Shift+L { move-column-right; }
+    Super+Shift+Left { move-column-left; }
+    Super+Shift+M { maximize-column; }
+    Super+Shift+Minus { set-window-height "-5%"; }
+    Super+Shift+Plus { set-window-height "+5%"; }
+    Super+Shift+R { switch-preset-window-height; }
+    Super+Shift+Right { move-column-right; }
+    Super+Shift+T { toggle-window-floating; }
+    Super+Shift+Up { move-window-up; }
+    Super+Shift+V { switch-focus-between-floating-and-tiling; }
+    Super+Shift+WheelScrollDown { focus-column-right; }
+    Super+Shift+WheelScrollUp { focus-column-left; }
+    Super+Up { focus-window-up; }
+    Super+WheelScrollLeft { focus-column-left; }
+    Super+WheelScrollRight { focus-column-right; }
+    Ctrl+Print { screenshot-screen; }
+    Ctrl+XF86Launch1 { screenshot-screen; }
+    Print { screenshot; }
+    XF86Launch1 { screenshot; }
+    Super+B hotkey-overlay-title="Launch Web Browser" { spawn "xdg-open" "https://"; }
+    Super+F hotkey-overlay-title="Launch File Manager" { spawn "nautilus"; }
+    Super+Return hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
+    Super+Shift+O hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn "niri-sidebar" "flip"; }
+    Super+Shift+P hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn "niri-sidebar" "reorder"; }
+    Super+Shift+X hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn "niri-sidebar" "toggle-visibility"; }
+    Super+T hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
+    Super+Apostrophe hotkey-overlay-title="Show Hotkey Overlay" { show-hotkey-overlay; }
+    Super+Shift+Slash { show-hotkey-overlay; }
+    Super+Tab repeat=false { toggle-overview; }
+    Super+Alt+F hotkey-overlay-title="Toggle Sticky Window" { spawn-sh "scriptisto $HOME/.config/niri/niri-scripts/support-sticky-floating toggle-sticky"; }
+
+}

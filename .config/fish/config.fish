@@ -22,7 +22,7 @@ end
 
 # eza
 if type -q eza
-    alias ll='eza -l --icons always'
+    alias ll='eza -l --icons always --total-size'
     alias ls='eza --icons always'
 end
 
@@ -41,6 +41,7 @@ end
 # Go
 if type -q go
     export GOPATH="$HOME/go"
+    export PATH="$GOPATH/bin:$PATH"
 end
 
 # Android SDK

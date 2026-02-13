@@ -1,5 +1,5 @@
 [mgr]
 prepend_keymap = [
-  { on = "<Enter>", run = "enter", desc = "Enter the child directory."},
+  # { on = "<Enter>", run = "enter", desc = "Enter the child directory."},
   { on = "<Backspace>", run = "back", desc = "Go back to the previous directory."},
 ]
