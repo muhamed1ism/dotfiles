@@ -63,7 +63,7 @@ binds {
     Super+C { center-column; }
     Super+Ctrl+C { center-visible-columns; }
     Super+Ctrl+End { move-column-to-last; }
-    Super+Ctrl+F { fullscreen-window; }
+    Super+Shift+F { fullscreen-window; }
     Super+Ctrl+H { consume-or-expel-window-left; }
     Super+Ctrl+Home { move-column-to-first; }
     Super+Ctrl+J { focus-monitor-down; }
@@ -103,7 +103,7 @@ binds {
     Super+Shift+D hotkey-overlay-title="Move Right" { move-column-right; }
     Super+Shift+Down { move-window-down; }
     Super+Shift+E { expand-column-to-available-width; }
-    Super+Shift+F hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn "niri-sidebar" "toggle-window"; }
+    Super+Alt+F hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn-sh "niri-sidebar toggle-window & scriptisto $HOME/.config/niri/niri-scripts/support-sticky-floating toggle-sticky"; }
     Super+Shift+H { move-column-left; }
     Super+Shift+J { move-window-down; }
     Super+Shift+K { move-window-up; }
@@ -136,6 +136,4 @@ binds {
     Super+Apostrophe hotkey-overlay-title="Show Hotkey Overlay" { show-hotkey-overlay; }
     Super+Shift+Slash { show-hotkey-overlay; }
     Super+Tab repeat=false { toggle-overview; }
-    Super+Alt+F hotkey-overlay-title="Toggle Sticky Window" { spawn-sh "scriptisto $HOME/.config/niri/niri-scripts/support-sticky-floating toggle-sticky"; }
-
 }

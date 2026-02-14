@@ -430,10 +430,6 @@
           "enabled": true
         },
         {
-          "id": "systemUpdate",
-          "enabled": true
-        },
-        {
           "id": "spacer",
           "enabled": true,
           "size": 10
