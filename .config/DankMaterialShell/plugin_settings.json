@@ -1,0 +1,74 @@
+{
+  "linuxWallpaperEngine": {
+    "enabled": true,
+    "monitorScenes": {},
+    "sceneSettings": {
+      "2190054449": {
+        "fps": 30
+      }
+    },
+    "generateStaticWallpaper": true,
+    "playlistIntervalMinutes": 1,
+    "monitorPlaylists": {}
+  },
+  "dockerManager": {
+    "enabled": true,
+    "dockerBinary": "podman",
+    "terminalApp": "kitty --detach",
+    "groupByCompose": false
+  },
+  "niriWindows": {
+    "enabled": true,
+    "noTrigger": false,
+    "trigger": "!"
+  },
+  "dmsLenovoBatterySettings": {
+    "enabled": true
+  },
+  "dmsBatteryManager": {
+    "enabled": true
+  },
+  "dmsBatteryManagerSettings": {
+    "refreshInterval": 1
+  },
+  "thinkpadBatteryThreshold": {
+    "enabled": true
+  },
+  "batteryThreshold": {
+    "enabled": true
+  },
+  "dankBatteryAlerts": {
+    "enabled": true
+  },
+  "dankKDEConnect": {
+    "enabled": true,
+    "selectedDeviceId": "04d27483398d4a589e465d4616f8fd0e"
+  },
+  "customRunningApps": {
+    "enabled": true,
+    "itemPercentage": 70,
+    "iconPercentage": 80,
+    "spaceBetweenItems": 2,
+    "resizeOnHover": false,
+    "resizePercentage": 133
+  },
+  "githubHeatmap": {
+    "enabled": false,
+    "username": "GITHUB_USERNAME",
+    "pat": "GITHUB_PAT_KEY",
+    "refreshInterval": 300
+  },
+  "appShortcut": {
+    "enabled": false
+  },
+  "aiAssistant": {
+    "enabled": true,
+    "provider": "custom",
+    "baseUrl": "https://openrouter.ai/api/v1",
+    "model": "stepfun/step-3.5-flash:free",
+    "apiKeyEnvVar": "OPENROUTER_API_KEY",
+    "saveApiKey": true,
+    "useMonospace": true
+  }
+}
+

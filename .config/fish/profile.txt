@@ -1,0 +1,754 @@
+Time (μs)   Sum (μs)  Command
+        88         88 > set -g IFS \n\ \t
+        16         16 > set -qg __fish_added_user_paths
+        14         14 > set -g __fish_added_user_paths
+        27         27 > function __fish_default_command_not_found_handler...
+         4         19 > if not status --is-interactive...
+        15         15 -> not status --is-interactive
+       586       1156 > set -l is_standalone (
+                            if status get-file config.fish &>/dev/null
+                                echo true
+                            else
+                                echo false
+                            end
+                        )
+        25        570 -> if status get-file config.fish &>/dev/null...
+       475        475 --> status get-file config.fish &>/dev/null
+        70         70 --> echo true
+        24         24 > set -l __extra_completionsdir
+        12         12 > set -l __extra_functionsdir
+        10         10 > set -l __extra_confdir
+        17        789 > if $is_standalone...
+        48         48 -> $is_standalone
+       647        724 -> status get-file __fish_build_paths.fish | source
+        46         46 --> set __extra_completionsdir /usr/share/fish/vendor_completions.d
+        16         16 --> set __extra_functionsdir /usr/share/fish/vendor_functions.d
+        15         15 --> set __extra_confdir /usr/share/fish/vendor_conf.d
+        17         17 > set -l xdg_data_dirs
+        19        562 > if set -q XDG_DATA_DIRS...
+         8          8 -> set -q XDG_DATA_DIRS
+        90         90 -> set --path xdg_data_dirs $XDG_DATA_DIRS
+       198        445 -> set xdg_data_dirs (string replace -r '([^/])/$' '$1' -- $xdg_data_dirs)/fish
+       247        247 --> string replace -r '([^/])/$' '$1' -- $xdg_data_dirs
+        20         20 > set -g __fish_vendor_completionsdirs
+        12         12 > set -g __fish_vendor_functionsdirs
+        10         10 > set -g __fish_vendor_confdirs
+        29        308 > if not set -q FISH_UNIT_TESTS_RUNNING...
+        10         10 -> not set -q FISH_UNIT_TESTS_RUNNING
+        47         47 -> set __fish_vendor_completionsdirs $__fish_user_data_dir/vendor_completions.d $xdg_data_dirs/vendor_completions.d
+        39         39 -> set __fish_vendor_functionsdirs $__fish_user_data_dir/vendor_functions.d $xdg_data_dirs/vendor_functions.d
+        39         39 -> set __fish_vendor_confdirs $__fish_user_data_dir/vendor_conf.d $xdg_data_dirs/vendor_conf.d
+         4         69 -> if not contains -- $__extra_completionsdir $__fish_vendor_completionsdirs...
+        65         65 --> not contains -- $__extra_completionsdir $__fish_vendor_completionsdirs
+         3         39 -> if not contains -- $__extra_functionsdir $__fish_vendor_functionsdirs...
+        36         36 --> not contains -- $__extra_functionsdir $__fish_vendor_functionsdirs
+         3         36 -> if not contains -- $__extra_confdir $__fish_vendor_confdirs...
+        33         33 --> not contains -- $__extra_confdir $__fish_vendor_confdirs
+        19        334 > if not set -q fish_function_path...
+        10         10 -> not set -q fish_function_path
+        51         51 -> set fish_function_path $__fish_config_dir/functions $__fish_sysconf_dir/functions $__fish_vendor_functionsdirs
+         5        254 -> if not $is_standalone...
+       249        249 --> not $is_standalone
+        21        179 > if not set -q fish_complete_path...
+        11         11 -> not set -q fish_complete_path
+        98         98 -> set fish_complete_path $__fish_config_dir/completions $__fish_sysconf_dir/completions $__fish_vendor_completionsdirs
+         2         21 -> if not $is_standalone...
+        19         19 --> not $is_standalone
+        28         28 -> set -a fish_complete_path $__fish_cache_dir/generated_completions
+        20         20 > function __fish_reconstruct_path -d "Update PATH when fish_user_paths changes" --on-variable fish_user_paths...
+        23         23 > function fish_sigtrap_handler --on-signal TRAP --no-scope-shadowing --description "TRAP handler: debug prompt"...
+        12         12 > function __fish_on_interactive --on-event fish_prompt --on-event fish_read...
+        12         12 > not set -q LANG
+         2         12 > if status --is-login...
+        10         10 -> status --is-login
+        71       4345 > __fish_reconstruct_path
+        14         14 -> set -l new_user_path
+       297        978 -> for path in (string split : -- $fish_user_paths)...
+        67         67 --> string split : -- $fish_user_paths
+        14        245 --> if not contains -- $path $new_user_path...
+       206        206 ---> not contains -- $path $new_user_path
+        25         25 ---> set -a new_user_path $path
+        11         49 --> if not contains -- $path $new_user_path...
+        19         19 ---> not contains -- $path $new_user_path
+        19         19 ---> set -a new_user_path $path
+         7         46 --> if not contains -- $path $new_user_path...
+        22         22 ---> not contains -- $path $new_user_path
+        17         17 ---> set -a new_user_path $path
+         6         46 --> if not contains -- $path $new_user_path...
+        22         22 ---> not contains -- $path $new_user_path
+        18         18 ---> set -a new_user_path $path
+        20        100 --> if not contains -- $path $new_user_path...
+        49         49 ---> not contains -- $path $new_user_path
+        31         31 ---> set -a new_user_path $path
+        10         75 --> if not contains -- $path $new_user_path...
+        45         45 ---> not contains -- $path $new_user_path
+        20         20 ---> set -a new_user_path $path
+         6         53 --> if not contains -- $path $new_user_path...
+        29         29 ---> not contains -- $path $new_user_path
+        18         18 ---> set -a new_user_path $path
+         5        570 -> if test (count $new_user_path) -lt (count $fish_user_paths)...
+       332        565 --> test (count $new_user_path) -lt (count $fish_user_paths)
+       192        192 ---> count $new_user_path
+        41         41 ---> count $fish_user_paths
+        93         93 -> set -l local_path $PATH
+        13         13 -> for x in $__fish_added_user_paths...
+        14         14 -> set -g __fish_added_user_paths
+        18       2477 -> if set -q fish_user_paths...
+         8          8 --> set -q fish_user_paths
+       292       2451 --> for x in (string split ":" -- $fish_user_paths[-1..1])...
+        65         65 ---> string split ":" -- $fish_user_paths[-1..1]
+        30        410 ---> if set -l idx (contains --index -- $x $local_path)...
+       180        324 ----> set -l idx (contains --index -- $x $local_path)
+       144        144 -----> contains --index -- $x $local_path
+        56         56 ----> set -e local_path[$idx]
+        89         89 ---> set -p local_path $x
+        12        275 ---> if set -l idx (contains --index -- $x $local_path)...
+       160        239 ----> set -l idx (contains --index -- $x $local_path)
+        79         79 -----> contains --index -- $x $local_path
+        24         24 ----> set -e local_path[$idx]
+        23         23 ---> set -p local_path $x
+        12        278 ---> if set -l idx (contains --index -- $x $local_path)...
+       165        243 ----> set -l idx (contains --index -- $x $local_path)
+        78         78 -----> contains --index -- $x $local_path
+        23         23 ----> set -e local_path[$idx]
+        21         21 ---> set -p local_path $x
+        10        224 ---> if set -l idx (contains --index -- $x $local_path)...
+       114        194 ----> set -l idx (contains --index -- $x $local_path)
+        80         80 -----> contains --index -- $x $local_path
+        20         20 ----> set -e local_path[$idx]
+        21         21 ---> set -p local_path $x
+        11        260 ---> if set -l idx (contains --index -- $x $local_path)...
+       158        229 ----> set -l idx (contains --index -- $x $local_path)
+        71         71 -----> contains --index -- $x $local_path
+        20         20 ----> set -e local_path[$idx]
+        22         22 ---> set -p local_path $x
+        11        221 ---> if set -l idx (contains --index -- $x $local_path)...
+       110        189 ----> set -l idx (contains --index -- $x $local_path)
+        79         79 -----> contains --index -- $x $local_path
+        21         21 ----> set -e local_path[$idx]
+        21         21 ---> set -p local_path $x
+         9        209 ---> if set -l idx (contains --index -- $x $local_path)...
+       116        180 ----> set -l idx (contains --index -- $x $local_path)
+        64         64 -----> contains --index -- $x $local_path
+        20         20 ----> set -e local_path[$idx]
+        20         20 ---> set -p local_path $x
+       115        115 -> set -xg PATH $local_path
+         9          9 > function __fish_expand_pid_args...
+        52        129 > for jobbltn in bg wait disown...
+        15         15 -> function $jobbltn -V jobbltn...
+        45         45 -> function $jobbltn -V jobbltn...
+        17         17 -> function $jobbltn -V jobbltn...
+         4          4 > function fg...
+        13        281 > if command -q kill...
+       261        261 -> command -q kill
+         7          7 -> function kill...
+        16         16 > set -l sourcelist
+       985     115260 > for file in $__fish_config_dir/conf.d/*.fish $__fish_sysconf_dir/conf.d/*.fish $__fish_vendor_confdirs/*.fish...
+       151        287 -> set -l basename (string replace -r '^.*/' '' -- $file)
+       136        136 --> string replace -r '^.*/' '' -- $file
+        27         27 -> contains -- $basename $sourcelist
+        19         19 -> set sourcelist $sourcelist $basename
+       126        126 -> test -f $file -a -r $file
+      1643       2123 -> source $file
+        54        410 --> for mode in default insert...
+       262        262 ---> bind --mode $mode " " __abbr_tips_bind_space
+        26         26 ---> bind --mode $mode \n __abbr_tips_bind_newline
+        17         17 ---> bind --mode $mode \r __abbr_tips_bind_newline
+        19         19 ---> bind --mode $mode " " __abbr_tips_bind_space
+        17         17 ---> bind --mode $mode \n __abbr_tips_bind_newline
+        15         15 ---> bind --mode $mode \r __abbr_tips_bind_newline
+        21         21 --> set -g __abbr_tips_used 0
+         6          6 --> function trim_value...
+         9          9 --> function __abbr_tips_install --on-event abbr_tips_install...
+        15         15 --> function __abbr_tips --on-event fish_postexec -d "Abbreviation reminder for the current command"...
+         6          6 --> function __abbr_tips_update --on-event abbr_tips_update...
+        13         13 --> function __abbr_tips_uninstall --on-event abbr_tips_uninstall...
+       141        221 -> set -l basename (string replace -r '^.*/' '' -- $file)
+        80         80 --> string replace -r '^.*/' '' -- $file
+        26         26 -> contains -- $basename $sourcelist
+        21         21 -> set sourcelist $sourcelist $basename
+        69         69 -> test -f $file -a -r $file
+      1080       4547 -> source $file
+        29         29 --> status is-interactive
+        73         73 --> set --global autopair_left "(" "[" "{" '"' "'"
+        67         67 --> set --global autopair_right ")" "]" "}" '"' "'"
+       106        106 --> set --global autopair_pairs "()" "[]" "{}" '""' "''"
+        21         21 --> function _autopair_fish_key_bindings --on-variable fish_key_bindings...
+       155       3151 --> _autopair_fish_key_bindings
+        28         28 ---> set --query fish_key_bindings[1]
+        39         39 ---> test $fish_key_bindings = fish_default_key_bindings
+        24         24 ---> set --local mode default insert
+        62         62 ---> bind --mode $mode[-1] --erase \177 \b \t
+        48         48 ---> bind --mode $mode[1] \177 _autopair_backspace
+        38         38 ---> bind --mode $mode[1] \b _autopair_backspace
+        35         35 ---> bind --mode $mode[1] \t _autopair_tab
+       884       2722 ---> printf "%s\n" $autopair_pairs | while read --local left right --delimiter ""
+                                   bind --mode $mode[-1] --erase $left $right
+                                   if test $left = $right
+                                       bind --mode $mode[1] $left "_autopair_insert_same \\$left"
+                                   else
+                                       bind --mode $mode[1] $left "_autopair_insert_left \\$left \\$right"
+                                       bind --mode $mode[1] $right "_autopair_insert_right \\$right"
+                                   end
+                               end
+       103        103 ----> read --local left right --delimiter ""
+        75         75 ----> bind --mode $mode[-1] --erase $left $right
+        48        225 ----> if test $left = $right...
+        39         39 -----> test $left = $right
+        73         73 -----> bind --mode $mode[1] $left "_autopair_insert_left \\$left \\$right"
+        65         65 -----> bind --mode $mode[1] $right "_autopair_insert_right \\$right"
+        89         89 ----> read --local left right --delimiter ""
+        67         67 ----> bind --mode $mode[-1] --erase $left $right
+        48        264 ----> if test $left = $right...
+        37         37 -----> test $left = $right
+        99         99 -----> bind --mode $mode[1] $left "_autopair_insert_left \\$left \\$right"
+        80         80 -----> bind --mode $mode[1] $right "_autopair_insert_right \\$right"
+        83         83 ----> read --local left right --delimiter ""
+        54         54 ----> bind --mode $mode[-1] --erase $left $right
+        42        207 ----> if test $left = $right...
+        41         41 -----> test $left = $right
+        64         64 -----> bind --mode $mode[1] $left "_autopair_insert_left \\$left \\$right"
+        60         60 -----> bind --mode $mode[1] $right "_autopair_insert_right \\$right"
+        82         82 ----> read --local left right --delimiter ""
+        63         63 ----> bind --mode $mode[-1] --erase $left $right
+        36        141 ----> if test $left = $right...
+        42         42 -----> test $left = $right
+        63         63 -----> bind --mode $mode[1] $left "_autopair_insert_same \\$left"
+        74         74 ----> read --local left right --delimiter ""
+        65         65 ----> bind --mode $mode[-1] --erase $left $right
+        70        190 ----> if test $left = $right...
+        33         33 -----> test $left = $right
+        87         87 -----> bind --mode $mode[1] $left "_autopair_insert_same \\$left"
+        56         56 ----> read --local left right --delimiter ""
+        20         20 --> function _autopair_uninstall --on-event autopair_uninstall...
+       221        352 -> set -l basename (string replace -r '^.*/' '' -- $file)
+       131        131 --> string replace -r '^.*/' '' -- $file
+        57         57 -> contains -- $basename $sourcelist
+        54         54 -> set sourcelist $sourcelist $basename
+       164        164 -> test -f $file -a -r $file
+       632       5268 -> source $file
+        14         44 --> if not status is-interactive...
+        30         30 ---> not status is-interactive
+        53         53 --> set --global _fzf_search_vars_command '_fzf_search_variables (set --show | psub) (set --names | psub)'
+       253       4523 --> fzf_configure_bindings
+      1380       1421 ---> source /home/muhamed1ism/.config/fish/functions/fzf_configure_bindings.fish
+        41         41 ----> function fzf_configure_bindings --description "Installs the default key bindings for fzf.fish with user overrides passed as options."...
+        21         21 ---> status is-interactive
+        83         83 ---> set -f options_spec h/help 'directory=?' 'git_log=?' 'git_status=?' 'history=?' 'processes=?' 'variables=?'
+       181        181 ---> argparse --max-args=0 --ignore-unknown $options_spec -- $argv 2>/dev/null
+       184       2564 ---> if test $status -ne 0...
+        48         48 ----> test $status -ne 0
+        31         31 ----> set --query _flag_help
+        81         81 ----> set -f key_sequences \e\cf \e\cl \e\cs \cr \e\cp \cv
+        28         28 ----> set --query _flag_directory
+        20         20 ----> set --query _flag_git_log
+        20         20 ----> set --query _flag_git_status
+        45         45 ----> set --query _flag_history
+        23         23 ----> set --query _flag_processes
+        18         18 ----> set --query _flag_variables
+        14        595 ----> if functions --query _fzf_uninstall_bindings...
+       581        581 -----> functions --query _fzf_uninstall_bindings
+       344       1445 ----> for mode in default insert...
+        46         46 -----> test -n $key_sequences[1]
+        67         67 -----> bind --mode $mode $key_sequences[1] _fzf_search_directory
+        29         29 -----> test -n $key_sequences[2]
+        52         52 -----> bind --mode $mode $key_sequences[2] _fzf_search_git_log
+        63         63 -----> test -n $key_sequences[3]
+        64         64 -----> bind --mode $mode $key_sequences[3] _fzf_search_git_status
+        26         26 -----> test -n $key_sequences[4]
+        48         48 -----> bind --mode $mode $key_sequences[4] _fzf_search_history
+        28         28 -----> test -n $key_sequences[5]
+        36         36 -----> bind --mode $mode $key_sequences[5] _fzf_search_processes
+        21         21 -----> test -n $key_sequences[6]
+        69         69 -----> bind --mode $mode $key_sequences[6] "$_fzf_search_vars_command"
+        35         35 -----> test -n $key_sequences[1]
+        50         50 -----> bind --mode $mode $key_sequences[1] _fzf_search_directory
+        34         34 -----> test -n $key_sequences[2]
+        48         48 -----> bind --mode $mode $key_sequences[2] _fzf_search_git_log
+        33         33 -----> test -n $key_sequences[3]
+        71         71 -----> bind --mode $mode $key_sequences[3] _fzf_search_git_status
+        32         32 -----> test -n $key_sequences[4]
+        49         49 -----> bind --mode $mode $key_sequences[4] _fzf_search_history
+        26         26 -----> test -n $key_sequences[5]
+        85         85 -----> bind --mode $mode $key_sequences[5] _fzf_search_processes
+        30         30 -----> test -n $key_sequences[6]
+        59         59 -----> bind --mode $mode $key_sequences[6] "$_fzf_search_vars_command"
+        26         26 ----> function _fzf_uninstall_bindings --inherit-variable key_sequences...
+        16         16 --> function _fzf_uninstall --on-event fzf_uninstall...
+       227        370 -> set -l basename (string replace -r '^.*/' '' -- $file)
+       143        143 --> string replace -r '^.*/' '' -- $file
+        49         49 -> contains -- $basename $sourcelist
+        59         59 -> set sourcelist $sourcelist $basename
+       150        150 -> test -f $file -a -r $file
+      1054       1418 -> source $file
+        80         80 --> set --query XDG_DATA_HOME
+        63         63 --> set --local XDG_DATA_HOME ~/.local/share
+        22         22 --> set --query nvm_mirror
+        25         25 --> set --global nvm_mirror https://nodejs.org/dist
+        22         22 --> set --query nvm_data
+        48         48 --> set --global nvm_data $XDG_DATA_HOME/nvm
+        18         18 --> function _nvm_install --on-event nvm_install...
+        11         11 --> function _nvm_update --on-event nvm_update...
+        14         14 --> function _nvm_uninstall --on-event nvm_uninstall...
+        14         61 --> if status is-interactive...
+        24         24 ---> status is-interactive
+        23         23 ---> set --query nvm_default_version
+       188        288 -> set -l basename (string replace -r '^.*/' '' -- $file)
+       100        100 --> string replace -r '^.*/' '' -- $file
+        32         32 -> contains -- $basename $sourcelist
+        26         26 -> set sourcelist $sourcelist $basename
+        73         73 -> test -f $file -a -r $file
+       156       1029 -> source $file
+       362        873 --> export OPENROUTER_API_KEY="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"
+        18         18 ---> function export --description 'Set env variable. Alias for `set -gx` for bash compatibility.'...
+         7         23 ---> if not set -q argv[1]...
+        16         16 ----> not set -q argv[1]
+        43        470 ---> for arg in $argv...
+       157        202 ----> set -l v (string split -m 1 "=" -- $arg)
+        45         45 -----> string split -m 1 "=" -- $arg
+        13         13 ----> set -l value
+       130        187 ----> switch (count $v)...
+        32         32 -----> count $v
+        25         25 -----> set value $v[2]
+        25         25 ----> set -gx $v[1] $value
+       171        306 -> set -l basename (string replace -r '^.*/' '' -- $file)
+       135        135 --> string replace -r '^.*/' '' -- $file
+        36         36 -> contains -- $basename $sourcelist
+        29         29 -> set sourcelist $sourcelist $basename
+        84         84 -> test -f $file -a -r $file
+       356        683 -> source $file
+        14         14 --> status is-interactive
+        11         11 --> function _puffer_fish_key_bindings --on-variable fish_key_bindings...
+        45        263 --> _puffer_fish_key_bindings
+        17         17 ---> set -l modes
+        12         53 ---> if test "$fish_key_bindings" = fish_default_key_bindings...
+        27         27 ----> test "$fish_key_bindings" = fish_default_key_bindings
+        14         14 ----> set modes default insert
+        33         33 ---> bind --mode $modes[1] '.' _puffer_fish_expand_dot
+        20         20 ---> bind --mode $modes[1] '!' _puffer_fish_expand_bang
+        17         17 ---> bind --mode $modes[1] '$' _puffer_fish_expand_buck
+        17         17 ---> bind --mode $modes[1] '*' _puffer_fish_expand_star
+        61         61 ---> bind --mode $modes[2] --erase '.' '!' '$' '*'
+        18         18 --> set -l uninstall_event puffer_fish_key_bindings_uninstall
+        21         21 --> function _$uninstall_event --on-event $uninstall_event...
+       172        246 -> set -l basename (string replace -r '^.*/' '' -- $file)
+        74         74 --> string replace -r '^.*/' '' -- $file
+        38         38 -> contains -- $basename $sourcelist
+        32         32 -> set sourcelist $sourcelist $basename
+        68         68 -> test -f $file -a -r $file
+       102        336 -> source $file
+       135        234 --> source "$HOME/.cargo/env.fish"
+         9         99 ---> if not contains "$HOME/.cargo/bin" $PATH...
+        90         90 ----> not contains "$HOME/.cargo/bin" $PATH
+       143        249 -> set -l basename (string replace -r '^.*/' '' -- $file)
+       106        106 --> string replace -r '^.*/' '' -- $file
+        35         35 -> contains -- $basename $sourcelist
+        33         33 -> set sourcelist $sourcelist $basename
+        66         66 -> test -f $file -a -r $file
+       870      31528 -> source $file
+         8         29 --> if set -q __sdkman_custom_dir...
+        21         21 ---> set -q __sdkman_custom_dir
+         8         62 --> if set -q SDKMAN_DIR...
+        10         10 ---> set -q SDKMAN_DIR
+        44         44 ---> not test -f "$SDKMAN_DIR/bin/sdkman-init.sh"
+         4         14 --> if not set -q SDKMAN_DIR...
+        10         10 ---> not set -q SDKMAN_DIR
+        26         26 --> set __fish_sdkman_init "$SDKMAN_DIR/bin/sdkman-init.sh"
+         3         33 --> if not test -f "$__fish_sdkman_init"...
+        30         30 ---> not test -f "$__fish_sdkman_init"
+        11         11 --> set --query fisher_path
+        22         22 --> set --local fisher_path $__fish_config_dir
+        29         29 --> set __fish_sdkman_noexport_init "$fisher_path/functions/__sdkman-noexport-init.sh"
+        13       5738 --> if  begin       not test -f "$__fish_sdkman_noexport_init";
+                                    or    env test "$__fish_sdkman_init" -nt "$__fish_sdkman_noexport_init"
+                              end...
+       101       5725 ---> ...
+        33         33 ----> not test -f "$__fish_sdkman_noexport_init"
+      5591       5591 ----> env test "$__fish_sdkman_init" -nt "$__fish_sdkman_noexport_init"
+        12         12 --> function __fish_sdkman_run_in_bash...
+        14      15550 --> if not set -q SDKMAN_CANDIDATES_DIR...
+        31         31 ---> not set -q SDKMAN_CANDIDATES_DIR
+       421      15505 ---> test (ls -ld "$SDKMAN_CANDIDATES_DIR" | awk '{print $3}') != (whoami)
+      2383      11447 ----> ls -ld "$SDKMAN_CANDIDATES_DIR" | awk '{print $3}'
+       153        183 -----> source /home/muhamed1ism/.config/fish/functions/ls.fish
+        30         30 ------> function ls --wraps='eza --icons always' --description 'alias ls=eza --icons always'...
+      8881       8881 -----> eza --icons always $argv
+      3637       3637 ----> whoami
+         9       9132 --> if grep -q "^sdkman_auto_env=true" "$SDKMAN_DIR/etc/config"...
+       391       9123 ---> grep -q "^sdkman_auto_env=true" "$SDKMAN_DIR/etc/config"
+        49       4366 ----> if echo | command grep --color=auto "" >/dev/null 2>&1...
+      4288       4288 -----> echo | command grep --color=auto "" >/dev/null 2>&1
+        29         29 -----> function grep...
+      4366       4366 ----> command grep --color=auto $argv
+       216        389 -> set -l basename (string replace -r '^.*/' '' -- $file)
+       173        173 --> string replace -r '^.*/' '' -- $file
+        48         48 -> contains -- $basename $sourcelist
+        38         38 -> set sourcelist $sourcelist $basename
+        78         78 -> test -f $file -a -r $file
+       422        486 -> source $file
+        31         31 --> set --local prefix "/usr"
+         5         20 --> if not set --query DEBUGINFOD_URLS...
+        15         15 ---> not set --query DEBUGINFOD_URLS
+         3         13 --> if not set --query DEBUGINFOD_IMA_CERT_PATH...
+        10         10 ---> not set --query DEBUGINFOD_IMA_CERT_PATH
+       259        391 -> set -l basename (string replace -r '^.*/' '' -- $file)
+       132        132 --> string replace -r '^.*/' '' -- $file
+        45         45 -> contains -- $basename $sourcelist
+        39         39 -> set sourcelist $sourcelist $basename
+        76         76 -> test -f $file -a -r $file
+       317      60614 -> source $file
+        63      60297 --> if type -q flatpak...
+       588        588 ---> type -q flatpak
+        44         44 ---> set -x --path XDG_DATA_DIRS $XDG_DATA_DIRS
+        11         11 ---> set -q XDG_DATA_DIRS[1]
+         9          9 ---> set -q XDG_DATA_HOME
+        23         23 ---> set -l XDG_DATA_HOME $HOME/.local/share
+        19         19 ---> set -l installations $XDG_DATA_HOME/flatpak
+        19      59323 ---> ...
+        12         12 ----> set -le G_MESSAGES_DEBUG
+        13         13 ----> set -lx GIO_USE_VFS local
+       238      59279 ----> set installations $installations (flatpak --installations)
+     59041      59041 -----> flatpak --installations
+        75        217 ---> for dir in {$installations[-1..1]}/exports/share...
+         6         51 ----> if not contains $dir $XDG_DATA_DIRS...
+        45         45 -----> not contains $dir $XDG_DATA_DIRS
+         6         91 ----> if not contains $dir $XDG_DATA_DIRS...
+        85         85 -----> not contains $dir $XDG_DATA_DIRS
+       218        386 -> set -l basename (string replace -r '^.*/' '' -- $file)
+       168        168 --> string replace -r '^.*/' '' -- $file
+        47         47 -> contains -- $basename $sourcelist
+        42         42 -> set sourcelist $sourcelist $basename
+        78         78 -> test -f $file -a -r $file
+       228        369 -> source $file
+        42         42 --> set -x --path MOZ_GMP_PATH $MOZ_GMP_PATH
+        16         16 --> set dir /usr/lib64/mozilla/plugins/gmp-gmpopenh264/system-installed
+         6         65 --> if not contains $dir $MOZ_GMP_PATH...
+        59         59 ---> not contains $dir $MOZ_GMP_PATH
+        18         18 --> set -e dir
+       151        217 -> set -l basename (string replace -r '^.*/' '' -- $file)
+        66         66 --> string replace -r '^.*/' '' -- $file
+        41         41 -> contains -- $basename $sourcelist
+        38         38 -> set sourcelist $sourcelist $basename
+        68         68 -> test -f $file -a -r $file
+       141        161 -> source $file
+         6         20 --> if ! set -q EDITOR...
+        14         14 ---> ! set -q EDITOR
+        70         70 > builtin source /etc/fish/config.fish
+       465      74492 > builtin source /home/muhamed1ism/.config/fish/config.fish
+        27         27 -> set -g fish_greeting ''
+        61      65888 -> if status is-interactive...
+        11         11 --> status is-interactive
+     12785      27442 --> starship init fish | source
+     -2731      14657 ---> source (/usr/local/bin/starship init fish --print-full-init | psub)
+      2020      12049 ----> /usr/local/bin/starship init fish --print-full-init | psub
+        32         32 -----> function psub --description "Read from stdin into a file and output the filename. Remove the file when the command that called psub exits."...
+        65         65 -----> set -l options -x 'f,F' h/help f/file F/fifo 's/suffix=' T-testing
+        79         79 -----> argparse -n psub --max-args=0 $options -- $argv
+        13         80 -----> if set -q _flag_help...
+        67         67 ------> set -q _flag_help
+        21         21 -----> set -l dirname
+        12         12 -----> set -l filename
+        10         10 -----> set -l funcname
+         4         17 -----> if not status --is-command-substitution...
+        13         13 ------> not status --is-command-substitution
+        63       8759 -----> if set -q _flag_fifo...
+         9          9 ------> set -q _flag_fifo
+        22         22 ------> test -z "$_flag_suffix"
+       244       4919 ------> set filename (__fish_mktemp_relative .psub)
+       388       4675 -------> __fish_mktemp_relative .psub
+        11         11 --------> function __fish_mktemp_relative...
+        16         54 --------> if not set -q TMPDIR[1]...
+        18         18 ---------> not set -q TMPDIR[1]
+        20         20 ---------> set -f TMPDIR /tmp
+        28         28 --------> argparse -u -- $argv
+         4         13 --------> if not set -q argv[1]...
+         9          9 ---------> not set -q argv[1]
+      4181       4181 --------> mktemp $argv_opts -- $TMPDIR/$argv.XXXXXX
+      3746       3746 ------> command cat >$filename
+       105        105 -----> echo $filename
+         6         28 -----> if set -q _flag_testing...
+        22         22 ------> set -q _flag_testing
+        24        785 -----> while ...
+        13         13 ------> true
+       194        410 ------> set funcname __fish_psub_(random)
+       216        216 -------> random
+        18        338 ------> if not functions $funcname >/dev/null 2>/dev/null...
+       308        308 -------> not functions $funcname >/dev/null 2>/dev/null
+        12         12 -------> break
+        36         36 -----> function $funcname --on-job-exit caller --inherit-variable filename --inherit-variable dirname --inherit-variable funcname...
+        10         10 ----> function fish_prompt...
+         4          4 ----> function fish_right_prompt...
+        39         39 ----> set -g VIRTUAL_ENV_DISABLE_PROMPT 1
+        25         25 ----> builtin functions -e fish_mode_prompt
+        39         39 ----> set -gx STARSHIP_SHELL "fish"
+        12         12 ----> function reset-transient --on-event fish_postexec...
+         8          8 ----> function transient_execute...
+        15         15 ----> function enable_transience --description 'enable transient prompt keybindings'...
+        12         12 ----> function disable_transience --description 'remove transient prompt keybindings'...
+       208       1124 ----> set -gx STARSHIP_SESSION_KEY (string sub -s1 -l16 (random)(random)(random)(random)(random)0000000000000000)
+       765        916 -----> string sub -s1 -l16 (random)(random)(random)(random)(random)0000000000000000
+        37         37 ------> random
+        33         33 ------> random
+        26         26 ------> random
+        29         29 ------> random
+        26         26 ------> random
+        57       4051 ----> __fish_psub_31896 JOB_EXIT -1 0
+      3892       3892 -----> command rm $filename
+         5         68 -----> if test -n "$dirname"...
+        63         63 ------> test -n "$dirname"
+        34         34 -----> functions -e $funcname
+      7059      14950 --> zoxide init fish | source
+        17         17 ---> function __zoxide_pwd...
+        34       1668 ---> if ! builtin functions --query __zoxide_cd_internal...
+       245        245 ----> ! builtin functions --query __zoxide_cd_internal
+      1366       1389 ----> string replace --regex -- '^function cd\s' 'function __zoxide_cd_internal ' <$__fish_data_dir/functions/cd.fish | source
+        23         23 -----> function __zoxide_cd_internal --description "Change directory"...
+         7          7 ---> function __zoxide_cd...
+         9          9 ---> function __zoxide_hook --on-variable PWD...
+         3          3 ---> function __zoxide_z...
+         3          3 ---> function __zoxide_z_complete...
+       265        265 ---> complete --command __zoxide_z --no-files --arguments '(__zoxide_z_complete)'
+         4          4 ---> function __zoxide_zi...
+       196        196 ---> abbr --erase z &>/dev/null
+      1028       3372 ---> alias z=__zoxide_z
+        17         17 ----> function alias --description 'Creates a function wrapping a command'...
+        34         34 ----> set -l options h/help s/save
+        67         67 ----> argparse -n alias --max-args=2 $options -- $argv
+         5         17 ----> if set -q _flag_help...
+        12         12 -----> set -q _flag_help
+        14         14 ----> set -l name
+        10         10 ----> set -l body
+        25        320 ----> if not set -q argv[1]...
+         8          8 -----> not set -q argv[1]
+         6          6 -----> not set -q argv[2]
+       196        243 -----> set -l tmp (string split -m 1 "=" -- $argv) ""
+        47         47 ------> string split -m 1 "=" -- $argv
+        21         21 -----> set name $tmp[1]
+        17         17 -----> set body $tmp[2]
+        78        114 ----> if test -z "$name"...
+        19         19 -----> test -z "$name"
+        17         17 -----> test -z "$body"
+       382        382 ----> printf '%s\n' $body | read -l --list words
+        49         49 ----> set -l first_word $words[1]
+        23         23 ----> set -l last_word $words[-1]
+         8         30 ----> if test $first_word = $name...
+        22         22 -----> test $first_word = $name
+       289        353 ----> set -l cmd_string (string escape -- "alias $argv")
+        64         64 -----> string escape -- "alias $argv"
+        23         23 ----> set -l wraps
+        28        297 ----> if test $first_word != $name...
+        31         31 -----> test $first_word != $name
+        22         22 -----> test $last_word != $name
+       182        216 -----> set wraps --wraps (string escape -- $body)
+        34         34 ------> string escape -- $body
+       529        561 ----> echo "function $name $wraps --description $cmd_string"\n"    $body \$argv"\n"end" | source
+        32         32 -----> function z --wraps __zoxide_z --description 'alias z=__zoxide_z'...
+         7         33 ----> if set -q _flag_save...
+        26         26 -----> set -q _flag_save
+       130        130 ---> abbr --erase zi &>/dev/null
+       212       2217 ---> alias zi=__zoxide_zi
+        32         32 ----> set -l options h/help s/save
+        64         64 ----> argparse -n alias --max-args=2 $options -- $argv
+         6         23 ----> if set -q _flag_help...
+        17         17 -----> set -q _flag_help
+        22         22 ----> set -l name
+        16         16 ----> set -l body
+        45        398 ----> if not set -q argv[1]...
+        13         13 -----> not set -q argv[1]
+        11         11 -----> not set -q argv[2]
+       213        272 -----> set -l tmp (string split -m 1 "=" -- $argv) ""
+        59         59 ------> string split -m 1 "=" -- $argv
+        32         32 -----> set name $tmp[1]
+        25         25 -----> set body $tmp[2]
+         9         49 ----> if test -z "$name"...
+        25         25 -----> test -z "$name"
+        15         15 -----> test -z "$body"
+       337        337 ----> printf '%s\n' $body | read -l --list words
+        50         50 ----> set -l first_word $words[1]
+        23         23 ----> set -l last_word $words[-1]
+         4         27 ----> if test $first_word = $name...
+        23         23 -----> test $first_word = $name
+       156        189 ----> set -l cmd_string (string escape -- "alias $argv")
+        33         33 -----> string escape -- "alias $argv"
+        12         12 ----> set -l wraps
+        41        291 ----> if test $first_word != $name...
+        20         20 -----> test $first_word != $name
+        13         13 -----> test $last_word != $name
+       195        217 -----> set wraps --wraps (string escape -- $body)
+        22         22 ------> string escape -- $body
+       417        443 ----> echo "function $name $wraps --description $cmd_string"\n"    $body \$argv"\n"end" | source
+        26         26 -----> function zi --wraps __zoxide_zi --description 'alias zi=__zoxide_zi'...
+         6         29 ----> if set -q _flag_save...
+        23         23 -----> set -q _flag_save
+        28         28 --> set -gx ATUIN_NOBIND true
+     13159      23297 --> atuin init fish | source
+       247      10073 ---> set -gx ATUIN_SESSION (atuin uuid)
+      9826       9826 ----> atuin uuid
+        33         33 ---> set --erase ATUIN_HISTORY_ID
+        17         17 ---> function _atuin_preexec --on-event fish_preexec...
+         7          7 ---> function _atuin_postexec --on-event fish_postexec...
+         4          4 ---> function _atuin_search...
+         4          4 ---> function _atuin_bind_up...
+        77         77 --> bind \cr _atuin_search
+        22         22 --> bind -M insert \cr _atuin_search
+        23         23 -> abbr -a cat bat
+        19         19 -> abbr -a ll 'eza -l --icons always --total-size'
+        13         13 -> abbr -a ls 'eza --icons always'
+        18         18 -> set -gx EDITOR nvim
+        11         11 -> set -gx VISUAL nvim
+        13         13 -> abbr -a vi nvim
+        23         23 -> abbr -a vim nvim
+        27         27 -> set -gx GOPATH $HOME/go
+      1244       2550 -> fish_add_path $GOPATH/bin
+        17         17 --> function fish_add_path --description "Add paths to the PATH"...
+        75         75 --> argparse -x g,U -x P,U -x a,p g/global U/universal P/path p/prepend a/append h/help m/move v/verbose n/dry-run -- $argv
+         5         19 --> if set -q _flag_help...
+        14         14 ---> set -q _flag_help
+        24         24 --> set -l scope $_flag_global $_flag_universal
+         6         24 --> if not set -q scope[1]...
+         9          9 ---> not set -q scope[1]
+         9          9 ---> not set -q fish_user_paths
+        14         14 --> set -l var fish_user_paths
+         7          7 --> set -q _flag_path
+        17         17 --> set -l mode $_flag_prepend $_flag_append
+         6          6 --> set -q mode[1]
+        11         11 --> set mode -p
+       339        339 --> status current-command | string match -rq '^fish_add_path$'
+        25         25 --> set -l newpaths
+        10         10 --> set -l indexes
+        59        596 --> for path in $argv...
+       145        269 ---> set -l p (builtin realpath -s -- $path 2>/dev/null)
+       124        124 ----> builtin realpath -s -- $path 2>/dev/null
+         5         47 ---> if not test -d "$p"...
+        42         42 ----> not test -d "$p"
+        17        221 ---> if set -l ind (contains -i -- $p $$var)...
+       121        182 ----> set -l ind (contains -i -- $p $$var)
+        61         61 -----> contains -i -- $p $$var
+         7         22 ----> if set -q _flag_move...
+         9          9 -----> set -q _flag_move
+         6          6 -----> set -q _flag_verbose
+        42         42 --> set -l newvar $$var
+         2          9 --> if set -q _flag_move...
+         7          7 ---> set -q _flag_move
+        22         22 --> set $mode newvar $newpaths
+        17         49 --> if set -q newpaths[1]...
+         8          8 ---> set -q newpaths[1]
+         6          6 ---> set -q indexes[1]
+         3         10 ---> if set -q _flag_verbose...
+         7          7 ----> set -q _flag_verbose
+         8          8 ---> return 1
+        24         24 -> set -gx ANDROID_HOME $HOME/Android/Sdk/
+       116       1864 -> fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
+        63         63 --> argparse -x g,U -x P,U -x a,p g/global U/universal P/path p/prepend a/append h/help m/move v/verbose n/dry-run -- $argv
+         3         11 --> if set -q _flag_help...
+         8          8 ---> set -q _flag_help
+        20         20 --> set -l scope $_flag_global $_flag_universal
+        13         73 --> if not set -q scope[1]...
+        38         38 ---> not set -q scope[1]
+        22         22 ---> not set -q fish_user_paths
+        14         14 --> set -l var fish_user_paths
+         7          7 --> set -q _flag_path
+        17         17 --> set -l mode $_flag_prepend $_flag_append
+         7          7 --> set -q mode[1]
+         9          9 --> set mode -p
+       342        342 --> status current-command | string match -rq '^fish_add_path$'
+        37         37 --> set -l newpaths
+        12         12 --> set -l indexes
+       147       1006 --> for path in $argv...
+       296        443 ---> set -l p (builtin realpath -s -- $path 2>/dev/null)
+       147        147 ----> builtin realpath -s -- $path 2>/dev/null
+         7         78 ---> if not test -d "$p"...
+        71         71 ----> not test -d "$p"
+        21        338 ---> if set -l ind (contains -i -- $p $$var)...
+       202        289 ----> set -l ind (contains -i -- $p $$var)
+        87         87 -----> contains -i -- $p $$var
+         6         28 ----> if set -q _flag_move...
+        14         14 -----> set -q _flag_move
+         8          8 -----> set -q _flag_verbose
+        40         40 --> set -l newvar $$var
+         4         11 --> if set -q _flag_move...
+         7          7 ---> set -q _flag_move
+        24         24 --> set $mode newvar $newpaths
+        19         55 --> if set -q newpaths[1]...
+         9          9 ---> set -q newpaths[1]
+         6          6 ---> set -q indexes[1]
+         4         12 ---> if set -q _flag_verbose...
+         8          8 ----> set -q _flag_verbose
+         9          9 ---> return 1
+        19         19 -> set -gx JAVA_HOME /usr/lib/jvm/java-21-openjdk
+       130       1757 -> fish_add_path $JAVA_HOME/bin
+        63         63 --> argparse -x g,U -x P,U -x a,p g/global U/universal P/path p/prepend a/append h/help m/move v/verbose n/dry-run -- $argv
+         4         13 --> if set -q _flag_help...
+         9          9 ---> set -q _flag_help
+        22         22 --> set -l scope $_flag_global $_flag_universal
+         5         23 --> if not set -q scope[1]...
+        10         10 ---> not set -q scope[1]
+         8          8 ---> not set -q fish_user_paths
+        14         14 --> set -l var fish_user_paths
+         7          7 --> set -q _flag_path
+        17         17 --> set -l mode $_flag_prepend $_flag_append
+         7          7 --> set -q mode[1]
+        10         10 --> set mode -p
+       428        428 --> status current-command | string match -rq '^fish_add_path$'
+        36         36 --> set -l newpaths
+        13         13 --> set -l indexes
+       164        844 --> for path in $argv...
+       204        341 ---> set -l p (builtin realpath -s -- $path 2>/dev/null)
+       137        137 ----> builtin realpath -s -- $path 2>/dev/null
+         9         66 ---> if not test -d "$p"...
+        57         57 ----> not test -d "$p"
+        21        273 ---> if set -l ind (contains -i -- $p $$var)...
+       159        225 ----> set -l ind (contains -i -- $p $$var)
+        66         66 -----> contains -i -- $p $$var
+         5         27 ----> if set -q _flag_move...
+        13         13 -----> set -q _flag_move
+         9          9 -----> set -q _flag_verbose
+        41         41 --> set -l newvar $$var
+         3         11 --> if set -q _flag_move...
+         8          8 ---> set -q _flag_move
+        23         23 --> set $mode newvar $newpaths
+        20         55 --> if set -q newpaths[1]...
+         8          8 ---> set -q newpaths[1]
+         7          7 ---> set -q indexes[1]
+         3         11 ---> if set -q _flag_verbose...
+         8          8 ----> set -q _flag_verbose
+         9          9 ---> return 1
+       176       1697 -> fish_add_path $HOME/.cargo/bin
+        62         62 --> argparse -x g,U -x P,U -x a,p g/global U/universal P/path p/prepend a/append h/help m/move v/verbose n/dry-run -- $argv
+         3         13 --> if set -q _flag_help...
+        10         10 ---> set -q _flag_help
+        21         21 --> set -l scope $_flag_global $_flag_universal
+         7         23 --> if not set -q scope[1]...
+         8          8 ---> not set -q scope[1]
+         8          8 ---> not set -q fish_user_paths
+        14         14 --> set -l var fish_user_paths
+         6          6 --> set -q _flag_path
+        17         17 --> set -l mode $_flag_prepend $_flag_append
+         7          7 --> set -q mode[1]
+        10         10 --> set mode -p
+       299        299 --> status current-command | string match -rq '^fish_add_path$'
+        22         22 --> set -l newpaths
+         9          9 --> set -l indexes
+        88        802 --> for path in $argv...
+       178        284 ---> set -l p (builtin realpath -s -- $path 2>/dev/null)
+       106        106 ----> builtin realpath -s -- $path 2>/dev/null
+         9         71 ---> if not test -d "$p"...
+        62         62 ----> not test -d "$p"
+        63        359 ---> if set -l ind (contains -i -- $p $$var)...
+       169        253 ----> set -l ind (contains -i -- $p $$var)
+        84         84 -----> contains -i -- $p $$var
+        13         43 ----> if set -q _flag_move...
+        17         17 -----> set -q _flag_move
+        13         13 -----> set -q _flag_verbose
+       121        121 --> set -l newvar $$var
+         4         15 --> if set -q _flag_move...
+        11         11 ---> set -q _flag_move
+        25         25 --> set $mode newvar $newpaths
+        21         55 --> if set -q newpaths[1]...
+         9          9 ---> set -q newpaths[1]
+         6          6 ---> set -q indexes[1]
+         3         11 ---> if set -q _flag_verbose...
+         8          8 ----> set -q _flag_verbose
+         8          8 ---> return 1
+        21         21 -> set -gx QT_QPA_PLATFORMTHEME qt6ct
+        33         33 -> abbr -a config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'

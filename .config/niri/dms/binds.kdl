@@ -103,7 +103,8 @@ binds {
     Super+Shift+D hotkey-overlay-title="Move Right" { move-column-right; }
     Super+Shift+Down { move-window-down; }
     Super+Shift+E { expand-column-to-available-width; }
-    Super+Alt+F hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn-sh "niri-sidebar toggle-window & scriptisto $HOME/.config/niri/niri-scripts/support-sticky-floating toggle-sticky"; }
+    Super+Alt+F hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn-sh "niri-sidebar toggle-window"; }
+    Super+Ctrl+Alt+F hotkey-overlay-title="Toggle Sticky Floating" { spawn-sh "scriptisto $HOME/.config/niri/niri-scripts/support-sticky-floating toggle-sticky"; }
     Super+Shift+H { move-column-left; }
     Super+Shift+J { move-window-down; }
     Super+Shift+K { move-window-up; }
@@ -132,6 +133,7 @@ binds {
     Super+Shift+O hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn "niri-sidebar" "flip"; }
     Super+Shift+P hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn "niri-sidebar" "reorder"; }
     Super+Shift+X hotkey-overlay-title="Toggle the focused window in/out of the sidebar" { spawn "niri-sidebar" "toggle-visibility"; }
+    Super+Shift+Y hotkey-overlay-title="Toggle AI Assistant" { spawn "dms" "ipc" "call" "plugins" "toggle" "aiAssistant"; }
     Super+T hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
     Super+Apostrophe hotkey-overlay-title="Show Hotkey Overlay" { show-hotkey-overlay; }
     Super+Shift+Slash { show-hotkey-overlay; }
